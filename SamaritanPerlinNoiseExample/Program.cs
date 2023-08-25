@@ -16,11 +16,8 @@ namespace SamaritanPerlinNoise
             // Create layers with different amplitudes and frequencies:
             Layer[] layers = new Layer[]
              {
-                new Layer(20.0),    // Base layer with reduced amplitude and low frequency.
-                new Layer(10.0),    // Second layer with even lower amplitude and moderate frequency.
-                new Layer(4.0)      // Third layer with lowest amplitude and high frequency.
+                new Layer(20.0)    // Base layer with reduced amplitude and low frequency.
              };
-
 
             using (SKBitmap bitmap = new SKBitmap(width, height))
             {

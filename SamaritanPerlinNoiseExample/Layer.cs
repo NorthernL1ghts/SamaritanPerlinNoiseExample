@@ -7,10 +7,10 @@ namespace SamaritanPerlinNoise
         private double amplitude;
         private double frequencyModifier;
 
-        public double Amplitude
+        public double FrequencyModifier
         {
-            get { return amplitude; }
-            set { amplitude = value; }
+            get { return frequencyModifier; }
+            set { frequencyModifier = value; }
         }
 
         public Layer(double frequencyModifier)
@@ -28,8 +28,8 @@ namespace SamaritanPerlinNoise
             double frequency = frequencyModifier;
 
             // Calculate the noise value for the given coordinates using PerlinNoise,
-            // Scale it by the layer's amplitude and frequency:
-            return (amplitude * PerlinNoise.Noise(x * frequency, y * frequency, z * frequency)) * 2.0 - 1.0;
+            // Scale it by the layer's amplitude and frequency, without the -1 to 1 mapping:
+            return amplitude * PerlinNoise.Noise(x * frequency, y * frequency, z * frequency);
         }
     }
 }
